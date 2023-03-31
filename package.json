@@ -1,0 +1,19 @@
+{
+  "name": "accessfintech",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalittew/accessFintech.git"
+  },
+  "author": "Lalit Tewari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lalittew/accessFintech/issues"
+  },
+  "homepage": "https://github.com/lalittew/accessFintech#readme"
+}
