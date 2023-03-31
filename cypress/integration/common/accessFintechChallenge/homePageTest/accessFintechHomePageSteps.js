@@ -9,3 +9,7 @@ Given("I am on Access Fintech home page", () => {
 Then("I verify the UI of home page", () => {
     accessFintechHomePage.verifyUIHomePage()
 })
+
+When("I click on Countries menu tab", () => {
+    genericFunctions.clickElement(accessFintechHomePage.countriesTab)
+})

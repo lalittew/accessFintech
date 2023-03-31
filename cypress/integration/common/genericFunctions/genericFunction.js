@@ -22,6 +22,10 @@ class GenericFunctions{
     verifyElementHaveTextWithIndex(element, index, textToVerify){
         cy.get(element).eq(index).should('have.text', textToVerify)
     }
+
+    clickElement(element){
+        cy.get(element).click()
+    }
 }
 
 export const genericFunctions = new GenericFunctions()
