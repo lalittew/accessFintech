@@ -1,1 +1,9 @@
-{}
+{
+    "env":{
+        "baseUrl": "https://qa-test.accessfintech.com/"
+    },
+    "testFiles": "**/*.feature",
+    	"chromeWebSecurity": false,
+    	"viewportWidth": 2000,
+    	"viewportHeight": 800
+}
