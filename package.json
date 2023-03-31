@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lalittew/accessFintech/issues"
   },
-  "homepage": "https://github.com/lalittew/accessFintech#readme"
+  "homepage": "https://github.com/lalittew/accessFintech#readme",
+  "devDependencies": {
+    "cypress": "^9.3.1"
+  }
 }
