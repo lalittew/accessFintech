@@ -12,7 +12,7 @@ class AccessFintechHomePage{
     //String related to home page
     homeTabText = "Home"
     countriesTabText = "Countries"
-    menuTabHighlightedInBlue = 'rgb(0, 94, 189)'
+    defaultBlueColor = 'rgb(0, 94, 189)'
     menuTabHighlightedInTransparent = 'rgba(0, 0, 0, 0)'
     headingDashboardText = 'Dashboard'
     countriesAvailableText = 'Countries available'
@@ -26,12 +26,12 @@ class AccessFintechHomePage{
         //Verify that Home tab is present and is highlighted in blue colour
         genericFunctions.verifyElementIsVisible(this.homeTab)
         genericFunctions.verifyElementHaveText(this.homeTab, this.homeTabText)
-        genericFunctions.verifyBackGroundColorElement(this.homeTab, this.menuTabHighlightedInBlue)
+        genericFunctions.verifyBackGroundColorOfElement(this.homeTab, this.defaultBlueColor)
 
         //Verify that Countries tab is present and is highlighted in transparent colour
         genericFunctions.verifyElementIsVisible(this.countriesTab)
         genericFunctions.verifyElementHaveText(this.countriesTab, this.countriesTabText)
-        genericFunctions.verifyBackGroundColorElement(this.countriesTab, this.menuTabHighlightedInTransparent)
+        genericFunctions.verifyBackGroundColorOfElement(this.countriesTab, this.menuTabHighlightedInTransparent)
 
         //Verify that Dashboard heading is present and have proper text
         genericFunctions.verifyElementIsVisible(this.headingDashboard)

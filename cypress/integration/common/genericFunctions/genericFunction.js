@@ -11,8 +11,12 @@ class GenericFunctions{
         cy.get(element).should('have.text', textToVerify)
     }
 
-    verifyBackGroundColorElement(element, backgroundColor){
+    verifyBackGroundColorOfElement(element, backgroundColor){
         cy.get(element).should('have.css', 'background-color').and('eq', backgroundColor)
+    }
+
+    verifyColorOfElement(element, elementColor){
+        cy.get(element).should('have.css', 'color').and('eq', elementColor)
     }
 
     verifyElementIsVisibleWithIndex(elementToVerify, index){
@@ -25,6 +29,19 @@ class GenericFunctions{
 
     clickElement(element){
         cy.get(element).click()
+    }
+
+    clickElementWithIndex(element, index){
+        cy.get(element).eq(index).click()
+    }
+
+    enterText(element, textToEnter){
+        cy.get(element).clear()
+        cy.get(element).type(textToEnter)
+    }
+
+    verifyLengthOfElement(element, expectedLength){
+        cy.get(element).should('have.length', expectedLength)
     }
 }
 

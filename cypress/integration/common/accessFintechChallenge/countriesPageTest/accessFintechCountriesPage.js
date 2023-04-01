@@ -1,4 +1,5 @@
 import { genericFunctions } from "../../genericFunctions/genericFunction"
+import { accessFintechCountryInfoPage } from "../countryInfoPageTest/accessFintechCountryinfoPage"
 import { accessFintechHomePage } from "../homePageTest/accessFintechHomePage"
 
 class AccessFintechCountriesPage{
@@ -9,6 +10,12 @@ class AccessFintechCountriesPage{
     countriesHeaderCheckBox = 'th[class="sc-iqAbSa gfcIZQ"] > input'
     countriesHeaderColumns = '.gfcIZQ'
     totalRowsCountriesBody = 'tbody[class="sc-jrsJCI emsrNO"] > tr'
+    marAsDropDown = 'select[data-test="actions"] > option'
+    countryVisitedCheckMark = 'label[data-test="input-visited"] > svg'
+    resetButton = 'button[class="sc-gtssRu sc-dlnjPT gmjWml cuIYFB"]'
+    checkBoxCountries = 'td[class="sc-crzoUp lkwjiV"] > input'
+    rowCountryInfo = 'tr[class="sc-kEqYlL bcxYtT"]'
+    
 
     //Strings related to Countries page
     totalCountriesCount = '250 countries'
@@ -21,18 +28,22 @@ class AccessFintechCountriesPage{
     countriesHeaderColumnnameLanguage = 'Language'
     countriesHeaderColumnnameVisited = 'Visited'
     countriesHeaderColumnnameWantToGo = 'Want to go'
-    rowsCount250 = '250'
+    rowsCount250 = 250
+    markAsDropDownValues = ["Mark as", "Visited", "Not visited", "Want to go", "Do not want to go"]
+    greenColor = 'rgb(0, 128, 0)'
+    setAsVisitedButtonText = 'Set as visited'
 
+    // Functions related to Countries page
     verifyUICountriesPage(){
         //Verify that Countries tab is present and is highlighted in blue colour
         genericFunctions.verifyElementIsVisible(accessFintechHomePage.countriesTab)
         genericFunctions.verifyElementHaveText(accessFintechHomePage.countriesTab, accessFintechHomePage.countriesTabText)
-        genericFunctions.verifyBackGroundColorElement(accessFintechHomePage.countriesTab, accessFintechHomePage.menuTabHighlightedInBlue)
+        genericFunctions.verifyBackGroundColorOfElement(accessFintechHomePage.countriesTab, accessFintechHomePage.defaultBlueColor)
 
         //Verify that Home tab is present and is highlighted in transparent colour
         genericFunctions.verifyElementIsVisible(accessFintechHomePage.homeTab)
         genericFunctions.verifyElementHaveText(accessFintechHomePage.homeTab, accessFintechHomePage.homeTabText)
-        genericFunctions.verifyBackGroundColorElement(accessFintechHomePage.homeTab, accessFintechHomePage.menuTabHighlightedInTransparent)
+        genericFunctions.verifyBackGroundColorOfElement(accessFintechHomePage.homeTab, accessFintechHomePage.menuTabHighlightedInTransparent)
 
         //Verify the total number of countries present in table
         genericFunctions.verifyElementIsVisible(this.countriesCount)
@@ -70,6 +81,33 @@ class AccessFintechCountriesPage{
 
     countRowsCountriesTableBody(element, expectedLenth){
         cy.get(element).should('have.length', expectedLenth)
+    }
+
+    verifyMarkAsDropDownValues(element, dropDown){
+        cy.get(element).each(($ele, i) => {
+            expect($ele).to.have.text(dropDown[i])
+        })
+    }
+
+    clickResetButton(resetButtonToClick){
+        switch(resetButtonToClick){
+            case 'Countries visited':
+                genericFunctions.clickElementWithIndex(this.resetButton, 0)
+            break;
+
+            case 'Countries to visit':
+                var resetButtonLength = cy.get(this.resetButton).length
+                if(resetButtonLength>1){
+                    genericFunctions.clickElementWithIndex(this.resetButton, 1)
+                }
+                else{
+                    genericFunctions.clickElementWithIndex(this.resetButton, 0)
+                }
+        }
+    }
+
+    selectValueMarkAsDropDown(valueOfDropDown){
+        cy.get('select[data-test="actions"]').select(valueOfDropDown)
     }
 }
 
