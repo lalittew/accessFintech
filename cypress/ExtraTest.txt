@@ -1,0 +1,14 @@
+Since I do not had enough time to completely cover all the possible scenarios, I have covered or written test for as many scenarios 
+I can write. Below are the extra scenarios I could have written or added as part of challenge.
+
+* Can add test to check the functionality of Reset button under "Countries to visit" in Home page
+* Can add similar tests for "Want to visit" functionality as I have written test for "Countries Visited"
+* Can add test for adding multiple countries to Visited or Want to visit list
+* Can add test for checking the map functionality
+* Can add test for checking the functionality of filter and verify that it is showing multiple countries with similar initials
+* Can add test for checking the symbols before the buttons and Want to visit
+* Can add test for verifying the list of countries and their respective features
+* Can add more test for chekcing the Key and Values in Country Info page
+* Can add test for checking that each time I select a country the value changes to "Selected countries/250"
+
+And lot more tests can be added but above are just few extra examples.
