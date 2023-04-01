@@ -60,4 +60,4 @@ Feature: This feature file is to verify the functionality of Countries page
 
     Examples:
         | country        | countriesVisited |
-        | India          |    1             |
+        | India          |    1             |    
